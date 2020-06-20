@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en" dir="ltr">
   <head>
+  	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.5/es6-shim.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -91,7 +94,7 @@
 
 <!-- Page Content -->
 <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
-    <div class="page">
+    <div class="page" id="app">
       <div class="page-main">
         <div class="header py-4">
           <div class="container">
@@ -216,7 +219,7 @@
                   </li>
                 
                   <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fe fe-file-text"></i> Cài đặt</a>
+                    <a href="setup.html" class="nav-link"><i class="fe fe-file-text"></i> Cài đặt</a>
                   </li>
                 </ul>
               </div>
@@ -231,379 +234,81 @@
               </h1>
               <div class="page-subtitle">Hiển thị 1 - 12 của 84 sự cố</div>
               <div class="page-options d-flex">
-                <select class="form-control custom-select w-auto">
-                  <option value="asc">Mới nhất</option>
+                <select class="form-control custom-select w-auto" @change="reverseSuco">
+                  <option value="asc" >Mới nhất</option>
                   <option value="desc">Cũ nhất</option>
                 </select>
 
-                <select class="form-control custom-select w-auto ml-2">
-                  <option value="asc">Tất cả địa điểm</option>
-                  <option value="desc">Miền Bắc</option>
-                  <option value="desc">Miền Trung</option>
-                  <option value="desc">Miền Nam</option>
+                <select class="form-control custom-select w-auto ml-2" @change="filterWhere">
+                  <option value="0">Tất cả địa điểm</option>
+                  <option value="Bac">Miền Bắc</option>
+                  <option value="Trung">Miền Trung</option>
+                  <option value="Nam">Miền Nam</option>
                 </select>
 
-                <select class="form-control custom-select w-auto ml-2">
-                  <option value="asc">Tất cả sự cố</option>
-                  <option value="desc">Sự cố điện</option>
-                  <option value="desc">Sự cố hành lang</option>
-                  <option value="desc">Sự cố cây cối</option>
+                <select class="form-control custom-select w-auto ml-2" @change="filterTag">
+                  <option value="0">Tất cả sự cố</option>
+                  <option value="1">Sự cố điện</option>
+                  <option value="2">Sự cố hành lang</option>
+                  <option value="3">Sự cố cây cối</option>
                 </select>
 
-                <select class="form-control custom-select w-auto ml-2">
-                  <option value="asc">Tất cả mức độ</option>
-                  <option value="desc">Rất nghiêm trọng</option>
-                  <option value="desc">Nghiêm trọng</option>
-                  <option value="desc">Bình thường</option>
+                <select class="form-control custom-select w-auto ml-2" @change="filterStatus">
+                  <option value="0">Tất cả mức độ</option>
+                  <option value="Rất nghiêm trọng">Rất nghiêm trọng</option>
+                  <option value="Nghiêm trọng">Nghiêm trọng</option>
+                  <option value="Bình thường">Bình thường</option>
                 </select>
 
                 <div class="input-icon ml-2">
                   <span class="input-icon-addon">
                     <i class="fe fe-search"></i>
                   </span>
-                  <input type="text" class="form-control w-10" placeholder="Tìm kiếm sự cố">
+                  <input type="text" class="form-control w-10" placeholder="Tìm kiếm sự cố" v-model="searchF">
                 </div>
               </div>
             </div>
-            <div class="row row-cards">
-              
-             <div class="col-sm-6 col-lg-4">
-                <div class="card p-3">
-                  <a href="./docs/index.html" class="mb-3">
-                    <img src="./demo/photos/suco1.jpg" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
-                  </a>
 
-                  <div class="row">
-                    <div class="col-3 text-center">
-                      <div class="avatar avatar-md" style="background-image: url(demo/faces/male/41.jpg)"></div>
-                      <p>Mr. Hải</p>
-                    </div>
-                    
-                    <div class="col-6">
-                      <div class="font-weight-bold" style="color: red"><i class="fa fa-circle"></i> Chập điện</div>
-                      <small class="d-block"><i class="fa fa-circle"></i> Rất nghiêm trọng </small>
-                      <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone 6 </small>
-                      <small class="d-block"><i class="fe fe-watch"></i> 3 mins ago</small>
-                    </div>
+           
+            
 
-                     <div class="col-3 p-0">
-                      <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
-                      <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
-                      <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
+			<div class="row row-cards">
+			 	<div class="col-sm-6 col-lg-4"  v-for="suco in sucos" v-if="suco.display 
+			 	&& (suco.status == selectStatus || selectStatus == 0)
+				&& (suco.where == selectWhere || selectWhere == 0)
+				&& nomalize(suco.name).includes(nomalize(searchF))
+			 	">
+	            <div class="card p-3" >
+	              <a href="./docs/index.html" class="mb-3">
+	                <img v-bind:src="suco.img" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
+	              </a>
 
-              <div class="col-sm-6 col-lg-4">
-                <div class="card p-3">
-                  <a href="./docs/index.html" class="mb-3">
-                    <img src="./demo/photos/suco2.jpg" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
-                  </a>
+	              <div class="row">
+	                <div class="col-3 text-center">
+	                  <div class="avatar avatar-md" v-bind:style="{backgroundImage: 'url('+ suco.avatar + ')'}"></div>
+	                  <p>{{suco.leader}}</p>
+	                </div>
+	                
+	                <div class="col-6">
+	                  <div class="font-weight-bold" v-bind:style="{color: suco.status === 'Rất nghiêm trọng'? 'red': suco.status === 'Nghiêm trọng'?'#f1c40f':'blue'}">
+	                  	<i class="fa fa-circle"></i> {{suco.name}}</div>
+	                  <small class="d-block"><i class="fa fa-circle"></i> {{suco.status}} </small>
+	                  <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone {{suco.drone}} </small>
+	                  <small class="d-block"><i class="fe fe-watch"></i> {{suco.time}} mins ago</small>
+	                </div>
 
-                  <div class="row">
-                    <div class="col-3 text-center">
-                      <div class="avatar avatar-md" style="background-image: url(demo/faces/male/42.jpg)"></div>
-                      <p>Mr. Dũng</p>
-                    </div>
-                    
-                    <div class="col-6">
-                      <div class="font-weight-bold" style="color: #f1c40f"><i class="fa fa-circle"></i> Cháy đường dây</div>
-                      <small class="d-block"><i class="fa fa-circle"></i> Nghiêm trọng </small>
-                      <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone 5 </small>
-                      <small class="d-block"><i class="fe fe-watch"></i> 31 mins ago</small>
-                    </div>
+	                 <div class="col-3 p-0">
+	                  <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
+	                  <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
+	                  <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+			</div>
 
-                     <div class="col-3 p-0">
-                      <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
-                      <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
-                      <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-lg-4">
-                <div class="card p-3">
-                  <a href="./docs/index.html" class="mb-3">
-                    <img src="./demo/photos/suco3.jpg" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
-                  </a>
-
-                  <div class="row">
-                    <div class="col-3 text-center">
-                      <div class="avatar avatar-md" style="background-image: url(demo/faces/male/40.jpg)"></div>
-                      <p>Mr. Huy</p>
-                    </div>
-                    
-                    <div class="col-6">
-                      <div class="font-weight-bold" style="color: #467fcf"><i class="fa fa-circle"></i> Sự cố hành lang</div>
-                      <small class="d-block"><i class="fa fa-circle"></i> Bình thường </small>
-                      <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone 1 </small>
-                      <small class="d-block"><i class="fe fe-watch"></i> 2 hours ago</small>
-                    </div>
-
-                     <div class="col-3 p-0">
-                      <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
-                      <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
-                      <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4">
-                <div class="card p-3">
-                  <a href="./docs/index.html" class="mb-3">
-                    <img src="./demo/photos/suco1.jpg" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
-                  </a>
-
-                  <div class="row">
-                    <div class="col-3 text-center">
-                      <div class="avatar avatar-md" style="background-image: url(demo/faces/male/41.jpg)"></div>
-                      <p>Mr. Hải</p>
-                    </div>
-                    
-                    <div class="col-6">
-                      <div class="font-weight-bold" style="color: red"><i class="fa fa-circle"></i> Chập điện</div>
-                      <small class="d-block"><i class="fa fa-circle"></i> Rất nghiêm trọng </small>
-                      <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone 6 </small>
-                      <small class="d-block"><i class="fe fe-watch"></i> 3 mins ago</small>
-                    </div>
-
-                     <div class="col-3 p-0">
-                      <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
-                      <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
-                      <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-lg-4">
-                <div class="card p-3">
-                  <a href="./docs/index.html" class="mb-3">
-                    <img src="./demo/photos/suco2.jpg" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
-                  </a>
-
-                  <div class="row">
-                    <div class="col-3 text-center">
-                      <div class="avatar avatar-md" style="background-image: url(demo/faces/male/42.jpg)"></div>
-                      <p>Mr. Dũng</p>
-                    </div>
-                    
-                    <div class="col-6">
-                      <div class="font-weight-bold" style="color: #f1c40f"><i class="fa fa-circle"></i> Cháy đường dây</div>
-                      <small class="d-block"><i class="fa fa-circle"></i> Nghiêm trọng </small>
-                      <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone 5 </small>
-                      <small class="d-block"><i class="fe fe-watch"></i> 31 mins ago</small>
-                    </div>
-
-                     <div class="col-3 p-0">
-                      <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
-                      <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
-                      <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-lg-4">
-                <div class="card p-3">
-                  <a href="./docs/index.html" class="mb-3">
-                    <img src="./demo/photos/suco3.jpg" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
-                  </a>
-
-                  <div class="row">
-                    <div class="col-3 text-center">
-                      <div class="avatar avatar-md" style="background-image: url(demo/faces/male/40.jpg)"></div>
-                      <p>Mr. Huy</p>
-                    </div>
-                    
-                    <div class="col-6">
-                      <div class="font-weight-bold" style="color: #467fcf"><i class="fa fa-circle"></i> Sự cố hành lang</div>
-                      <small class="d-block"><i class="fa fa-circle"></i> Bình thường </small>
-                      <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone 1 </small>
-                      <small class="d-block"><i class="fe fe-watch"></i> 2 hours ago</small>
-                    </div>
-
-                     <div class="col-3 p-0">
-                      <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
-                      <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
-                      <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-lg-4">
-                <div class="card p-3">
-                  <a href="./docs/index.html" class="mb-3">
-                    <img src="./demo/photos/suco1.jpg" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
-                  </a>
-
-                  <div class="row">
-                    <div class="col-3 text-center">
-                      <div class="avatar avatar-md" style="background-image: url(demo/faces/male/41.jpg)"></div>
-                      <p>Mr. Hải</p>
-                    </div>
-                    
-                    <div class="col-6">
-                      <div class="font-weight-bold" style="color: red"><i class="fa fa-circle"></i> Chập điện</div>
-                      <small class="d-block"><i class="fa fa-circle"></i> Rất nghiêm trọng </small>
-                      <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone 6 </small>
-                      <small class="d-block"><i class="fe fe-watch"></i> 3 mins ago</small>
-                    </div>
-
-                     <div class="col-3 p-0">
-                      <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
-                      <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
-                      <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-lg-4">
-                <div class="card p-3">
-                  <a href="./docs/index.html" class="mb-3">
-                    <img src="./demo/photos/suco2.jpg" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
-                  </a>
-
-                  <div class="row">
-                    <div class="col-3 text-center">
-                      <div class="avatar avatar-md" style="background-image: url(demo/faces/male/42.jpg)"></div>
-                      <p>Mr. Dũng</p>
-                    </div>
-                    
-                    <div class="col-6">
-                      <div class="font-weight-bold" style="color: #f1c40f"><i class="fa fa-circle"></i> Cháy đường dây</div>
-                      <small class="d-block"><i class="fa fa-circle"></i> Nghiêm trọng </small>
-                      <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone 5 </small>
-                      <small class="d-block"><i class="fe fe-watch"></i> 31 mins ago</small>
-                    </div>
-
-                     <div class="col-3 p-0">
-                      <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
-                      <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
-                      <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-lg-4">
-                <div class="card p-3">
-                  <a href="./docs/index.html" class="mb-3">
-                    <img src="./demo/photos/suco3.jpg" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
-                  </a>
-
-                  <div class="row">
-                    <div class="col-3 text-center">
-                      <div class="avatar avatar-md" style="background-image: url(demo/faces/male/40.jpg)"></div>
-                      <p>Mr. Huy</p>
-                    </div>
-                    
-                    <div class="col-6">
-                      <div class="font-weight-bold" style="color: #467fcf"><i class="fa fa-circle"></i> Sự cố hành lang</div>
-                      <small class="d-block"><i class="fa fa-circle"></i> Bình thường </small>
-                      <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone 1 </small>
-                      <small class="d-block"><i class="fe fe-watch"></i> 2 hours ago</small>
-                    </div>
-
-                     <div class="col-3 p-0">
-                      <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
-                      <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
-                      <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-lg-4">
-                <div class="card p-3">
-                  <a href="./docs/index.html" class="mb-3">
-                    <img src="./demo/photos/suco1.jpg" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
-                  </a>
-
-                  <div class="row">
-                    <div class="col-3 text-center">
-                      <div class="avatar avatar-md" style="background-image: url(demo/faces/male/41.jpg)"></div>
-                      <p>Mr. Hải</p>
-                    </div>
-                    
-                    <div class="col-6">
-                      <div class="font-weight-bold" style="color: red"><i class="fa fa-circle"></i> Chập điện</div>
-                      <small class="d-block"><i class="fa fa-circle"></i> Rất nghiêm trọng </small>
-                      <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone 6 </small>
-                      <small class="d-block"><i class="fe fe-watch"></i> 3 mins ago</small>
-                    </div>
-
-                     <div class="col-3 p-0">
-                      <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
-                      <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
-                      <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-lg-4">
-                <div class="card p-3">
-                  <a href="./docs/index.html" class="mb-3">
-                    <img src="./demo/photos/suco2.jpg" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
-                  </a>
-
-                  <div class="row">
-                    <div class="col-3 text-center">
-                      <div class="avatar avatar-md" style="background-image: url(demo/faces/male/42.jpg)"></div>
-                      <p>Mr. Dũng</p>
-                    </div>
-                    
-                    <div class="col-6">
-                      <div class="font-weight-bold" style="color: #f1c40f"><i class="fa fa-circle"></i> Cháy đường dây</div>
-                      <small class="d-block"><i class="fa fa-circle"></i> Nghiêm trọng </small>
-                      <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone 5 </small>
-                      <small class="d-block"><i class="fe fe-watch"></i> 31 mins ago</small>
-                    </div>
-
-                     <div class="col-3 p-0">
-                      <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
-                      <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
-                      <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-lg-4">
-                <div class="card p-3">
-                  <a href="./docs/index.html" class="mb-3">
-                    <img src="./demo/photos/suco3.jpg" alt="Photo by Nathan Guerrero" class="rounded " height="250" width="100%">
-                  </a>
-
-                  <div class="row">
-                    <div class="col-3 text-center">
-                      <div class="avatar avatar-md" style="background-image: url(demo/faces/male/40.jpg)"></div>
-                      <p>Mr. Huy</p>
-                    </div>
-                    
-                    <div class="col-6">
-                      <div class="font-weight-bold" style="color: #467fcf"><i class="fa fa-circle"></i> Sự cố hành lang</div>
-                      <small class="d-block"><i class="fa fa-circle"></i> Bình thường </small>
-                      <small class="d-block"><i class="fa fa-bug"></i> Chụp bởi Drone 1 </small>
-                      <small class="d-block"><i class="fe fe-watch"></i> 2 hours ago</small>
-                    </div>
-
-                     <div class="col-3 p-0">
-                      <small  class="d-block mb-2"><a href="./docs/index.html" class="icon"><i class="fe fe-trending-up"></i> Phân tích</a></small>
-                      <small class="d-block mb-3"><a href="" class="icon"><i class="fe fe-instagram"></i> Chụp lại</a></small>
-                      <small class="d-block"><a href="" class="icon"><i class="fe fe-eye"></i> Chi tiết</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-     
-            </div>
+            
+           
           </div>
         </div>
       </div>
@@ -667,3 +372,172 @@
     </div>
   </body>
 </html>
+
+ <script type="text/javascript">
+            	{
+            	let app = new Vue({
+				  el: '#app',
+				  data: {
+				  	selectStatus : 0,
+				  	selectWhere: 0,
+				  	searchF: '',
+				    sucos: [
+				    {
+				    	leader: "Mr Hải",
+				    	name: "Chập điện",
+				    	status: "Rất nghiêm trọng",
+				    	drone: 6,
+				    	img: "./demo/photos/suco1.jpg",
+				    	avatar: "demo/faces/male/41.jpg",
+				    	time: 3,
+				    	tag: 1,
+				    	display: true,
+				    	where: "Bac"
+				    },
+					{
+				    	leader: "Mr Huy",
+				    	name: "Cháy đường dây",
+				    	status: "Nghiêm trọng",
+				    	drone: 5,
+				    	img: "./demo/photos/suco2.jpg",
+				    	avatar: "demo/faces/male/42.jpg",
+				    	time: 7,
+				    	tag:1,
+				    	display: true,
+				    	where: "Bac",
+				    },
+				    {
+				    	leader: "Mr Dũng",
+				    	name: "Hành lang đường",
+				    	status: "Bình thường",
+				    	drone: 3,
+				    	img: "./demo/photos/suco3.jpg",
+				    	avatar: "demo/faces/male/40.jpg",
+				    	time: 11,
+				    	tag: 2,
+				    	display: true,
+				    	where: "Bac"
+				    },
+				    {
+				    	leader: "Mr Tiến",
+				    	name: "Hành lang gần",
+				    	status: "Bình thường",
+				    	drone: 1,
+				    	img: "./demo/photos/suco4.jpg",
+				    	avatar: "demo/faces/male/1.jpg",
+				    	time: 14,
+				    	tag: 2,
+				    	display: true,
+				    	where: "Bac"
+				    },
+				    {
+				    	leader: "Mr Mạnh",
+				    	name: "Cây to đổ",
+				    	status: "Rất nghiêm trọng",
+				    	drone: 4,
+				    	img: "./demo/photos/suco5.jpg",
+				    	avatar: "demo/faces/male/2.jpg",
+				    	time: 18,
+				    	tag: 3,
+				    	display: true,
+				    	where: "Trung",
+				    },
+				    {
+				    	leader: "Mr Dũng",
+				    	name: "Có dị vật",
+				    	status: "Nghiêm trọng",
+				    	drone: 2,
+				    	img: "./demo/photos/suco6.jpg",
+				    	avatar: "demo/faces/male/40.jpg",
+				    	time: 19,
+				    	tag: 2,
+				    	display: true,
+				    	where: "Trung"
+				    },
+				    {
+				    	leader: "Mr Hải",
+				    	name: "Cháy cột điện",
+				    	status: "Rất nghiêm trọng",
+				    	drone: 5,
+				    	img: "./demo/photos/suco7.jpg",
+				    	avatar: "demo/faces/male/41.jpg",
+				    	time: 25,
+				    	tag: 1,
+				    	display: true,
+				    	where: "Nam"
+				    },
+				    {
+				    	leader: "Mr Nam",
+				    	name: "Cây mọc cao",
+				    	status: "Bình thường",
+				    	drone: 6,
+				    	img: "./demo/photos/suco8.jpg",
+				    	avatar: "demo/faces/male/3.jpg",
+				    	time: 47,
+				    	tag: 3,
+				    	display: true,
+				    	where: "Nam"
+				    },
+				    {
+				    	leader: "Mr Dũng",
+				    	name: "Lằng nhằng ghê",
+				    	status: "Nghiêm trọng",
+				    	drone: 1,
+				    	img: "./demo/photos/suco9.jpg",
+				    	avatar: "demo/faces/male/40.jpg",
+				    	time: 51,
+				    	tag: 1,
+				    	display: true,
+				    	where: "Nam"
+				    },
+				    {
+				    	leader: "Mr Hải",
+				    	name: "Dây diện đánh võng",
+				    	status: "Nghiêm trọng",
+				    	drone: 2,
+				    	img: "./demo/photos/suco10.jpg",
+				    	avatar: "demo/faces/male/41.jpg",
+				    	time: 59,
+				    	tag: 2,
+				    	display: true,
+				    	where: "Nam"
+				    },
+				    
+				    
+				    ]
+				  },
+				   methods: {
+				    reverseSuco: function () {
+				      this.sucos = this.sucos.reverse();
+				    },
+				    filterTag: function(event){
+				    	this.sucos = this.sucos.map(x => {
+				    	 	return {...x, display: x.tag == event.target.value || event.target.value == 0} ;
+				    	})
+				    },
+				    filterStatus: function(event){
+				    	this.selectStatus =  event.target.value
+				    },
+				    filterWhere: function(event){
+				    	this.selectWhere =  event.target.value
+				    },
+				    nomalize: function change_alias(alias) {
+					    var str = alias;
+					    str = str.toLowerCase();
+					    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g,"a"); 
+					    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g,"e"); 
+					    str = str.replace(/ì|í|ị|ỉ|ĩ/g,"i"); 
+					    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g,"o"); 
+					    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g,"u"); 
+					    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g,"y"); 
+					    str = str.replace(/đ/g,"d");
+					    str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g," ");
+					    str = str.replace(/ + /g," ");
+					    str = str.trim(); 
+					    return str;
+					}
+				    
+				  }
+				})
+            	}
+            </script>
