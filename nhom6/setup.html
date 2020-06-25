@@ -194,13 +194,13 @@
 
 
                   <li class="nav-item">
-                    <a href="./index.html" class="nav-link"><i class="fe fe-home"></i> Trang chủ</a>
+                    <a href="./index.html" class="nav-link"><i class="fe fe-home"></i> Tổng quan sự cố</a>
                   </li>
                  <!--  <li class="nav-item">
                     <a href="#"class="nav-link"><i class="fe fe-box"></i> Tổng quan</a>                  
                   </li> -->
                   <li class="nav-item dropdown">
-                    <a href="suco.html" class="nav-link"><i class="fe fe-calendar"></i> Tổng quan sự cố <span style="color: red">&ensp;(84)</span></a>
+                    <a href="suco.html" class="nav-link"><i class="fe fe-calendar"></i> Danh sách sự cố <span style="color: red">&ensp;(84)</span></a>
                     
                   </li>
                   <li class="nav-item dropdown">
@@ -231,111 +231,144 @@
             <div class="row">
               <div class="col-12">
                 <form action="https://httpbin.org/post" method="post" class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Cài đặt</h3>
-                  </div>
+                  
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-6 col-lg-4">
+                        
+                        <h3>Nhãn màu</h3><hr/>
                         <div class="form-group">
-                          <label class="form-label">Static</label>
-                          <div class="form-control-plaintext">Username</div>
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Text</label>
-                          <input type="text" class="form-control" name="example-text-input" placeholder="Text..">
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Disabled</label>
-                          <input type="text" class="form-control" name="example-disabled-input" placeholder="Disabled.." value="Well, she turned me into a newt." disabled>
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Readonly</label>
-                          <input type="text" class="form-control" name="example-disabled-input" placeholder="Disabled.." value="Well, how'd you become king, then?" readonly>
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Textarea <span class="form-label-small">56/100</span></label>
-                          <textarea class="form-control" name="example-textarea-input" rows="6" placeholder="Content..">Oh! Come and see the violence inherent in the system! Help, help, I'm being repressed! We shall say 'Ni' again to you, if you do not appease us. I'm not a witch. I'm not a witch. Camelot!</textarea>
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Image Check</label>
-                          <div class="row gutters-sm">
-                            <div class="col-6 col-sm-4">
-                              <label class="imagecheck mb-4">
-                                <input name="imagecheck" type="checkbox" value="1" class="imagecheck-input"  />
-                                <figure class="imagecheck-figure">
-                                  <img src="./demo/photos/nathan-anderson-316188-500.jpg" alt="}" class="imagecheck-image">
-                                </figure>
+                          <label class="form-label">Rất nguy hiểm</label>
+                          <div class="row gutters-xs">
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="azure" class="colorinput-input" />
+                                <span class="colorinput-color bg-azure"></span>
                               </label>
                             </div>
-                            <div class="col-6 col-sm-4">
-                              <label class="imagecheck mb-4">
-                                <input name="imagecheck" type="checkbox" value="2" class="imagecheck-input"  checked />
-                                <figure class="imagecheck-figure">
-                                  <img src="./demo/photos/nathan-dumlao-287713-500.jpg" alt="}" class="imagecheck-image">
-                                </figure>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="indigo" class="colorinput-input" />
+                                <span class="colorinput-color bg-indigo"></span>
                               </label>
                             </div>
-                            <div class="col-6 col-sm-4">
-                              <label class="imagecheck mb-4">
-                                <input name="imagecheck" type="checkbox" value="3" class="imagecheck-input"  />
-                                <figure class="imagecheck-figure">
-                                  <img src="./demo/photos/nicolas-picard-208276-500.jpg" alt="}" class="imagecheck-image">
-                                </figure>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="purple" class="colorinput-input" />
+                                <span class="colorinput-color bg-purple"></span>
                               </label>
                             </div>
-                            <div class="col-6 col-sm-4">
-                              <label class="imagecheck mb-4">
-                                <input name="imagecheck" type="checkbox" value="4" class="imagecheck-input"  checked />
-                                <figure class="imagecheck-figure">
-                                  <img src="./demo/photos/oskar-vertetics-53043-500.jpg" alt="}" class="imagecheck-image">
-                                </figure>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="pink" class="colorinput-input" />
+                                <span class="colorinput-color bg-pink"></span>
                               </label>
                             </div>
-                            <div class="col-6 col-sm-4">
-                              <label class="imagecheck mb-4">
-                                <input name="imagecheck" type="checkbox" value="5" class="imagecheck-input"  />
-                                <figure class="imagecheck-figure">
-                                  <img src="./demo/photos/priscilla-du-preez-181896-500.jpg" alt="}" class="imagecheck-image">
-                                </figure>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="red" class="colorinput-input" checked/>
+                                <span class="colorinput-color bg-red"></span>
                               </label>
                             </div>
-                            <div class="col-6 col-sm-4">
-                              <label class="imagecheck mb-4">
-                                <input name="imagecheck" type="checkbox" value="6" class="imagecheck-input"  />
-                                <figure class="imagecheck-figure">
-                                  <img src="./demo/photos/ricardo-gomez-angel-262359-500.jpg" alt="}" class="imagecheck-image">
-                                </figure>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="orange" class="colorinput-input" />
+                                <span class="colorinput-color bg-orange"></span>
                               </label>
                             </div>
-                            <div class="col-6 col-sm-4">
-                              <label class="imagecheck mb-4">
-                                <input name="imagecheck" type="checkbox" value="7" class="imagecheck-input"  checked />
-                                <figure class="imagecheck-figure">
-                                  <img src="./demo/photos/sam-ferrara-136526-500.jpg" alt="}" class="imagecheck-image">
-                                </figure>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="yellow" class="colorinput-input" />
+                                <span class="colorinput-color bg-yellow"></span>
                               </label>
                             </div>
-                            <div class="col-6 col-sm-4">
-                              <label class="imagecheck mb-4">
-                                <input name="imagecheck" type="checkbox" value="8" class="imagecheck-input"  />
-                                <figure class="imagecheck-figure">
-                                  <img src="./demo/photos/sean-afnan-244576-500.jpg" alt="}" class="imagecheck-image">
-                                </figure>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="lime" class="colorinput-input" />
+                                <span class="colorinput-color bg-lime"></span>
                               </label>
                             </div>
-                            <div class="col-6 col-sm-4">
-                              <label class="imagecheck mb-4">
-                                <input name="imagecheck" type="checkbox" value="9" class="imagecheck-input"  />
-                                <figure class="imagecheck-figure">
-                                  <img src="./demo/photos/sophie-higginbottom-133982-500.jpg" alt="}" class="imagecheck-image">
-                                </figure>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="green" class="colorinput-input" />
+                                <span class="colorinput-color bg-green"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="teal" class="colorinput-input" />
+                                <span class="colorinput-color bg-teal"></span>
                               </label>
                             </div>
                           </div>
                         </div>
                         <div class="form-group">
-                          <label class="form-label">Color Input</label>
+                          <label class="form-label">Nguy hiểm</label>
+                          <div class="row gutters-xs">
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="azure" class="colorinput-input" />
+                                <span class="colorinput-color bg-azure"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="indigo" class="colorinput-input"  />
+                                <span class="colorinput-color bg-indigo"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="purple" class="colorinput-input" />
+                                <span class="colorinput-color bg-purple"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="pink" class="colorinput-input" />
+                                <span class="colorinput-color bg-pink"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="red" class="colorinput-input" />
+                                <span class="colorinput-color bg-red"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="orange" class="colorinput-input" checked/>
+                                <span class="colorinput-color bg-orange"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="yellow" class="colorinput-input" />
+                                <span class="colorinput-color bg-yellow"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="lime" class="colorinput-input" />
+                                <span class="colorinput-color bg-lime"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="green" class="colorinput-input" />
+                                <span class="colorinput-color bg-green"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="teal" class="colorinput-input" />
+                                <span class="colorinput-color bg-teal"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Bình thường</label>
                           <div class="row gutters-xs">
                             <div class="col-auto">
                               <label class="colorinput">
@@ -400,155 +433,139 @@
                           </div>
                         </div>
                         <div class="form-group">
-                          <label class="form-label">Input group</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-group-append">
-                              <button class="btn btn-primary" type="button">Go!</button>
-                            </span>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Input group buttons</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control">
-                            <div class="input-group-append">
-                              <button type="button" class="btn btn-primary">Action</button>
-                              <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"></button>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="javascript:void(0)">
-                                  News
-                                </a>
-                                <a class="dropdown-item" href="javascript:void(0)">
-                                  Messages
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)">
-                                  Edit Profile
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Icon input</label>
-                          <div class="input-icon mb-3">
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-icon-addon">
-                              <i class="fe fe-search"></i>
-                            </span>
-                          </div>
-                          <div class="input-icon">
-                            <span class="input-icon-addon">
-                              <i class="fe fe-user"></i>
-                            </span>
-                            <input type="text" class="form-control" placeholder="Username">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Separated inputs</label>
+                          <label class="form-label">Ít nghiêm trọng</label>
                           <div class="row gutters-xs">
-                            <div class="col">
-                              <input type="text" class="form-control" placeholder="Search for...">
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="azure" class="colorinput-input" checked/>
+                                <span class="colorinput-color bg-azure"></span>
+                              </label>
                             </div>
-                            <span class="col-auto">
-                              <button class="btn btn-secondary" type="button"><i class="fe fe-search"></i></button>
-                            </span>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="indigo" class="colorinput-input"  />
+                                <span class="colorinput-color bg-indigo"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="purple" class="colorinput-input" />
+                                <span class="colorinput-color bg-purple"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="pink" class="colorinput-input" />
+                                <span class="colorinput-color bg-pink"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="red" class="colorinput-input" />
+                                <span class="colorinput-color bg-red"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="orange" class="colorinput-input" />
+                                <span class="colorinput-color bg-orange"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="yellow" class="colorinput-input" />
+                                <span class="colorinput-color bg-yellow"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="lime" class="colorinput-input" />
+                                <span class="colorinput-color bg-lime"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="green" class="colorinput-input" />
+                                <span class="colorinput-color bg-green"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="teal" class="colorinput-input" />
+                                <span class="colorinput-color bg-teal"></span>
+                              </label>
+                            </div>
                           </div>
                         </div>
                         <div class="form-group">
-                          <label class="form-label">ZIP Code</label>
-                          <div class="row gutters-sm">
-                            <div class="col">
-                              <input type="text" class="form-control" placeholder="Search for...">
+                          <label class="form-label">Không</label>
+                          <div class="row gutters-xs">
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="azure" class="colorinput-input" />
+                                <span class="colorinput-color bg-azure"></span>
+                              </label>
                             </div>
-                            <span class="col-auto align-self-center">
-                              <span class="form-help" data-toggle="popover" data-placement="top"
-								  data-content="<p>ZIP Code must be US or CDN format. You can use an extended ZIP+4 code to determine address more accurately.</p>
-                              <p class='mb-0'><a href=''>USP ZIP codes lookup tools</a></p>
-                              ">?</span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                      <div class="form-group">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" name="example-password-input" placeholder="Password..">
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Valid State</label>
-                        <input type="text" class="form-control is-valid" name="example-text-input-valid" placeholder="Valid State..">
-                        <input type="text" class="form-control mt-3 state-valid" value="Valid state">
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Invalid State</label>
-                        <input type="text" class="form-control is-invalid" name="example-text-input-invalid"
-						   placeholder="Invalid State..">
-                        <div class="invalid-feedback">Invalid feedback</div>
-                        <input type="text" class="form-control mt-3 state-invalid" value="Invalid state">
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Country</label>
-                        <select class="form-control custom-select">
-                          <option value="">Germany</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Ratios</label>
-                        <div class="row align-items-center">
-                          <div class="col">
-                            <input type="range" class="form-control custom-range" step="5" min="0" max="50">
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="indigo" class="colorinput-input"  />
+                                <span class="colorinput-color bg-indigo"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="purple" class="colorinput-input" />
+                                <span class="colorinput-color bg-purple"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="pink" class="colorinput-input" />
+                                <span class="colorinput-color bg-pink"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="red" class="colorinput-input" />
+                                <span class="colorinput-color bg-red"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="orange" class="colorinput-input" />
+                                <span class="colorinput-color bg-orange"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="yellow" class="colorinput-input" />
+                                <span class="colorinput-color bg-yellow"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="lime" class="colorinput-input" />
+                                <span class="colorinput-color bg-lime"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="green" class="colorinput-input" checked/>
+                                <span class="colorinput-color bg-green"></span>
+                              </label>
+                            </div>
+                            <div class="col-auto">
+                              <label class="colorinput">
+                                <input name="color" type="checkbox" value="teal" class="colorinput-input" />
+                                <span class="colorinput-color bg-teal"></span>
+                              </label>
+                            </div>
                           </div>
-                          <div class="col-auto">
-                            <input type="number" class="form-control w-8" value="45">
-                          </div>
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Size</label>
-                        <div class="selectgroup w-100">
-                          <label class="selectgroup-item">
-                            <input type="radio" name="value" value="50" class="selectgroup-input" checked="">
-                            <span class="selectgroup-button">S</span>
-                          </label>
-                          <label class="selectgroup-item">
-                            <input type="radio" name="value" value="100" class="selectgroup-input">
-                            <span class="selectgroup-button">M</span>
-                          </label>
-                          <label class="selectgroup-item">
-                            <input type="radio" name="value" value="150" class="selectgroup-input">
-                            <span class="selectgroup-button">L</span>
-                          </label>
-                          <label class="selectgroup-item">
-                            <input type="radio" name="value" value="200" class="selectgroup-input">
-                            <span class="selectgroup-button">XL</span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Icons input</label>
-                        <div class="selectgroup w-100">
-                          <label class="selectgroup-item">
-                            <input type="radio" name="transportation" value="2" class="selectgroup-input">
-                            <span class="selectgroup-button selectgroup-button-icon"><i class="fe fe-smartphone"></i></span>
-                          </label>
-                          <label class="selectgroup-item">
-                            <input type="radio" name="transportation" value="1" class="selectgroup-input" checked="">
-                            <span class="selectgroup-button selectgroup-button-icon"><i class="fe fe-tablet"></i></span>
-                          </label>
-                          <label class="selectgroup-item">
-                            <input type="radio" name="transportation" value="6" class="selectgroup-input">
-                            <span class="selectgroup-button selectgroup-button-icon"><i class="fe fe-monitor"></i></span>
-                          </label>
-                          <label class="selectgroup-item">
-                            <input type="radio" name="transportation" value="6" class="selectgroup-input">
-                            <span class="selectgroup-button selectgroup-button-icon"><i class="fe fe-x"></i></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Icon input</label>
+                       <hr/>
+                       <h3>Icon</h3><hr/>
+                       <div class="form-group">
+                        <label class="form-label">Icon nguy hiểm</label>
                         <div class="selectgroup selectgroup-pills">
                           <label class="selectgroup-item">
                             <input type="radio" name="icon-input" value="1" class="selectgroup-input" checked="">
@@ -568,24 +585,123 @@
                           </label>
                         </div>
                       </div>
+
                       <div class="form-group">
-                        <label class="form-label">Your skills</label>
+                        <label class="form-label">Icon xem infor</label>
+                        <div class="selectgroup selectgroup-pills">
+                          <label class="selectgroup-item">
+                            <input type="radio" name="-input" value="1" class="selectgroup-input" >
+                            <span class="selectgroup-button selectgroup-button-icon"><i class="fe fe-sun"></i></span>
+                          </label>
+                          <label class="selectgroup-item">
+                            <input type="radio" name="-input" value="2" class="selectgroup-input" checked="">
+                            <span class="selectgroup-button selectgroup-button-icon"><i class="fe fe-moon"></i></span>
+                          </label>
+                          <label class="selectgroup-item">
+                            <input type="radio" name="-input" value="3" class="selectgroup-input">
+                            <span class="selectgroup-button selectgroup-button-icon"><i class="fe fe-cloud-rain"></i></span>
+                          </label>
+                          <label class="selectgroup-item">
+                            <input type="radio" name="-input" value="4" class="selectgroup-input">
+                            <span class="selectgroup-button selectgroup-button-icon"><i class="fe fe-cloud"></i></span>
+                          </label>
+                        </div>
+                      </div>
+
+
+                    </div>
+                    <div class="col-md-6 col-lg-4" id='app2'>
+                      <h3>AI</h3><hr/>
+                      <div class="form-group">
+                        <label class="form-label">Hệ số học</label>
+                        <div class="row align-items-center">
+                          <div class="col">
+                            <input type="range" class="form-control custom-range" step="5" min="0" max="50" value="40"  @change="mychange"/>
+                            
+                          </div>
+                          <div class="col-auto">
+                            {{xval}}
+                          </div>
+                          
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Momentum</label>
+                        <div class="row align-items-center">
+                          <div class="col">
+                            <input type="range" class="form-control custom-range" step="1" min="0" max="10" value="9"  @change="mychange2"/>
+                            
+                          </div>
+                          <div class="col-auto">
+                            {{yval}}
+                          </div>
+                          
+                        </div>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label class="form-label">Classification</label>
+                        <div class="selectgroup w-100">
+                          <label class="selectgroup-item">
+                            <input type="radio" name="value" value="50" class="selectgroup-input" checked="">
+                            <span class="selectgroup-button">Resnet</span>
+                          </label>
+                          <label class="selectgroup-item">
+                            <input type="radio" name="value" value="100" class="selectgroup-input">
+                            <span class="selectgroup-button">VGG</span>
+                          </label>
+                          <label class="selectgroup-item">
+                            <input type="radio" name="value" value="150" class="selectgroup-input">
+                            <span class="selectgroup-button">Mobile</span>
+                          </label>
+                          <label class="selectgroup-item">
+                            <input type="radio" name="value" value="200" class="selectgroup-input">
+                            <span class="selectgroup-button">XL</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Loại thiết bị</label>
+                        <div class="selectgroup w-100">
+                          <label class="selectgroup-item">
+                            <input type="radio" name="transportation" value="2" class="selectgroup-input">
+                            <span class="selectgroup-button selectgroup-button-icon"><i class="fe fe-smartphone"></i></span>
+                          </label>
+                          <label class="selectgroup-item">
+                            <input type="radio" name="transportation" value="1" class="selectgroup-input" checked="">
+                            <span class="selectgroup-button selectgroup-button-icon"><i class="fe fe-tablet"></i></span>
+                          </label>
+                          <label class="selectgroup-item">
+                            <input type="radio" name="transportation" value="6" class="selectgroup-input">
+                            <span class="selectgroup-button selectgroup-button-icon"><i class="fe fe-monitor"></i></span>
+                          </label>
+                          <label class="selectgroup-item">
+                            <input type="radio" name="transportation" value="6" class="selectgroup-input">
+                            <span class="selectgroup-button selectgroup-button-icon"><i class="fe fe-x"></i></span>
+                          </label>
+                        </div>
+                      </div>
+                     
+                      <div class="form-group">
+                        <label class="form-label">Regional Segmentation</label>
                         <div class="selectgroup selectgroup-pills">
                           <label class="selectgroup-item">
                             <input type="checkbox" name="value" value="HTML" class="selectgroup-input" checked="">
-                            <span class="selectgroup-button">HTML</span>
+                            <span class="selectgroup-button">Yolo v3</span>
                           </label>
                           <label class="selectgroup-item">
                             <input type="checkbox" name="value" value="CSS" class="selectgroup-input">
-                            <span class="selectgroup-button">CSS</span>
+                            <span class="selectgroup-button">Faster - RCNN</span>
                           </label>
                           <label class="selectgroup-item">
                             <input type="checkbox" name="value" value="PHP" class="selectgroup-input">
-                            <span class="selectgroup-button">PHP</span>
+                            <span class="selectgroup-button">Mask RCNN</span>
                           </label>
                           <label class="selectgroup-item">
                             <input type="checkbox" name="value" value="JavaScript" class="selectgroup-input">
-                            <span class="selectgroup-button">JavaScript</span>
+                            <span class="selectgroup-button">Detechtron</span>
                           </label>
                           <label class="selectgroup-item">
                             <input type="checkbox" name="value" value="Ruby" class="selectgroup-input">
@@ -602,55 +718,31 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <div class="form-label">Toggle switches</div>
+                        <div class="form-label">Implement</div>
                         <div class="custom-switches-stacked">
                           <label class="custom-switch">
                             <input type="radio" name="option" value="1" class="custom-switch-input" checked>
                             <span class="custom-switch-indicator"></span>
-                            <span class="custom-switch-description">Option 1</span>
+                            <span class="custom-switch-description">Tensor Flow</span>
                           </label>
                           <label class="custom-switch">
                             <input type="radio" name="option" value="2" class="custom-switch-input">
                             <span class="custom-switch-indicator"></span>
-                            <span class="custom-switch-description">Option 2</span>
+                            <span class="custom-switch-description">Keras</span>
                           </label>
                           <label class="custom-switch">
                             <input type="radio" name="option" value="3" class="custom-switch-input">
                             <span class="custom-switch-indicator"></span>
-                            <span class="custom-switch-description">Option 3</span>
+                            <span class="custom-switch-description">Pytorch</span>
                           </label>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <div class="form-label">Toggle switch single</div>
-                        <label class="custom-switch">
-                          <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
-                          <span class="custom-switch-indicator"></span>
-                          <span class="custom-switch-description">I agree with terms and conditions</span>
-                        </label>
-                      </div>
-                      <fieldset class="form-fieldset">
-                        <div class="form-group">
-                          <label class="form-label">Full name<span class="form-required">*</span></label>
-                          <input type="text" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Company<span class="form-required">*</span></label>
-                          <input type="text" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Email<span class="form-required">*</span></label>
-                          <input type="email" class="form-control" />
-                        </div>
-                        <div class="form-group mb-0">
-                          <label class="form-label">Phone number</label>
-                          <input type="tel" class="form-control" />
-                        </div>
-                      </fieldset>
+                      
                     </div>
                     <div class="col-md-6 col-lg-4">
+                      <h3>Các tùy chọn khác </h3> <hr>
                       <div class="form-group">
-                        <div class="form-label">Radios</div>
+                        <div class="form-label">Form Radio</div>
                         <div class="custom-controls-stacked">
                           <label class="custom-control custom-radio">
                             <input type="radio" class="custom-control-input" name="example-radios" value="option1" checked>
@@ -670,25 +762,9 @@
                           </label>
                         </div>
                       </div>
+                      
                       <div class="form-group">
-                        <div class="form-label">Inline Radios</div>
-                        <div class="custom-controls-stacked">
-                          <label class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" name="example-inline-radios" value="option1" checked>
-                            <span class="custom-control-label">Option 1</span>
-                          </label>
-                          <label class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" name="example-inline-radios" value="option2">
-                            <span class="custom-control-label">Option 2</span>
-                          </label>
-                          <label class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" name="example-inline-radios" value="option3">
-                            <span class="custom-control-label">Option 3</span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="form-label">Checkboxes</div>
+                        <div class="form-label">Form Checkboxes</div>
                         <div class="custom-controls-stacked">
                           <label class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
@@ -708,32 +784,10 @@
                           </label>
                         </div>
                       </div>
+                      
+                      
                       <div class="form-group">
-                        <div class="form-label">Inline Checkboxes</div>
-                        <div>
-                          <label class="custom-control custom-checkbox custom-control-inline">
-                            <input type="checkbox" class="custom-control-input" name="example-inline-checkbox1" value="option1" checked>
-                            <span class="custom-control-label">Option 1</span>
-                          </label>
-                          <label class="custom-control custom-checkbox custom-control-inline">
-                            <input type="checkbox" class="custom-control-input" name="example-inline-checkbox2" value="option2">
-                            <span class="custom-control-label">Option 2</span>
-                          </label>
-                          <label class="custom-control custom-checkbox custom-control-inline">
-                            <input type="checkbox" class="custom-control-input" name="example-inline-checkbox3" value="option3">
-                            <span class="custom-control-label">Option 3</span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="form-label">Bootstrap's Custom File Input</div>
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="example-file-input-custom">
-                          <label class="custom-file-label">Choose file</label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Date of birth</label>
+                        <label class="form-label">Chọn ngày tháng</label>
                         <div class="row gutters-xs">
                           <div class="col-5">
                             <select name="user[month]" class="form-control custom-select">
@@ -912,197 +966,37 @@
                             </select>
                           </div>
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Username</label>
-                        <div class="input-group">
-                          <span class="input-group-prepend" id="basic-addon1">
-                            <span class="input-group-text">@</span>
-                          </span>
-                          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        <br><hr>
+                      <h3>Xác thực cài đặt</h3><br>
+                      <fieldset class="form-fieldset">
+                        <div class="form-group">
+                          <label class="form-label">Full name<span class="form-required">*</span></label>
+                          <input type="text" class="form-control" />
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Subdomain</label>
-                        <div class="input-group">
-                          <input type="text" class="form-control" placeholder="Your subdomain" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                          <span class="input-group-append" id="basic-addon2">
-                            <span class="input-group-text">.example.com</span>
-                          </span>
+                       
+                        <div class="form-group">
+                          <label class="form-label">Email<span class="form-required">*</span></label>
+                          <input type="email" class="form-control" />
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Your vanity URL</label>
-                        <div class="input-group">
-                          <span class="input-group-prepend" id="basic-addon3">
-                            <span class="input-group-text">https://example.com/users/</span>
-                          </span>
-                          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        <div class="form-group mb-0">
+                          <label class="form-label">Phone number</label>
+                          <input type="tel" class="form-control" />
                         </div>
+                      </fieldset>
                       </div>
-                      <div class="form-group">
-                        <label class="form-label">Price</label>
-                        <div class="input-group">
-                          <span class="input-group-prepend">
-                            <span class="input-group-text">$</span>
-                          </span>
-                          <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)">
-                          <span class="input-group-append">
-                            <span class="input-group-text">.00</span>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Button input</label>
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Action
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0)">Action</a>
-                              <a class="dropdown-item" href="javascript:void(0)">Another action</a>
-                              <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
-                              <div role="separator" class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
-                            </div>
-                          </div>
-                          <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Tags</label>
-                        <input type="text" class="form-control" id="input-tags" value="aa,bb,cc,dd">
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Beast</label>
-                        <select name="beast" id="select-beast" class="form-control custom-select">
-                          <option value="1">Chuck Testa</option>
-                          <option value="4">Sage Cattabriga-Alosa</option>
-                          <option value="3">Nikola Tesla</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Users list</label>
-                        <select name="user" id="select-users" class="form-control custom-select">
-                          <option value="1" data-data='{"image": "demo/faces/female/16.jpg"}'>Victoria King</option>
-                          <option value="2" data-data='{"image": "demo/faces/male/41.jpg"}'>Nathan Guerrero</option>
-                          <option value="3" data-data='{"image": "demo/faces/female/1.jpg"}'>Alice Mason</option>
-                          <option value="4" data-data='{"image": "demo/faces/female/18.jpg"}'>Rose Bradley</option>
-                          <option value="5" data-data='{"image": "demo/faces/male/16.jpg"}'>Peter Richards</option>
-                          <option value="6" data-data='{"image": "demo/faces/male/26.jpg"}'>Wayne Holland</option>
-                          <option value="7" data-data='{"image": "demo/faces/female/7.jpg"}'>Michelle Ross</option>
-                          <option value="8" data-data='{"image": "demo/faces/female/17.jpg"}'>Debra Beck</option>
-                          <option value="9" data-data='{"image": "demo/faces/male/30.jpg"}'>Phillip Peters</option>
-                          <option value="10" data-data='{"image": "demo/faces/male/32.jpg"}'>Jack Ruiz</option>
-                          <option value="11" data-data='{"image": "demo/faces/male/9.jpg"}'>Ronald Bradley</option>
-                          <option value="12" data-data='{"image": "demo/faces/female/8.jpg"}'>Kathleen Harper</option>
-                          <option value="13" data-data='{"image": "demo/faces/male/4.jpg"}'>Bobby Knight</option>
-                          <option value="14" data-data='{"image": "demo/faces/male/35.jpg"}'>Craig Anderson</option>
-                          <option value="15" data-data='{"image": "demo/faces/female/29.jpg"}'>Crystal Wallace</option>
-                          <option value="16" data-data='{"image": "demo/faces/male/2.jpg"}'>Vincent Valdez</option>
-                          <option value="17" data-data='{"image": "demo/faces/female/1.jpg"}'>Beverly Armstrong</option>
-                          <option value="18" data-data='{"image": "demo/faces/male/40.jpg"}'>Russell Gibson</option>
-                          <option value="19" data-data='{"image": "demo/faces/male/7.jpg"}'>Tyler Munoz</option>
-                          <option value="20" data-data='{"image": "demo/faces/female/11.jpg"}'>Sharon Wells</option>
-                          <option value="21" data-data='{"image": "demo/faces/male/21.jpg"}'>Juan Hernandez</option>
-                          <option value="22" data-data='{"image": "demo/faces/male/25.jpg"}'>Dylan Walters</option>
-                          <option value="23" data-data='{"image": "demo/faces/female/5.jpg"}'>Kathryn Cooper</option>
-                          <option value="24" data-data='{"image": "demo/faces/female/17.jpg"}'>Cynthia Curtis</option>
-                          <option value="25" data-data='{"image": "demo/faces/male/40.jpg"}'>Michael Obrien</option>
-                          <option value="26" data-data='{"image": "demo/faces/male/33.jpg"}'>Billy May</option>
-                          <option value="27" data-data='{"image": "demo/faces/male/6.jpg"}'>Larry Jensen</option>
-                          <option value="28" data-data='{"image": "demo/faces/male/32.jpg"}'>Terry Barnett</option>
-                          <option value="29" data-data='{"image": "demo/faces/female/10.jpg"}'>Ruth Arnold</option>
-                          <option value="30" data-data='{"image": "demo/faces/female/18.jpg"}'>Julia Reed</option>
-                          <option value="31" data-data='{"image": "demo/faces/female/12.jpg"}'>Amanda Hunt</option>
-                          <option value="32" data-data='{"image": "demo/faces/female/21.jpg"}'>Laura Weaver</option>
-                          <option value="33" data-data='{"image": "demo/faces/female/29.jpg"}'>Margaret Berry</option>
-                          <option value="34" data-data='{"image": "demo/faces/female/2.jpg"}'>Nancy Herrera</option>
-                          <option value="35" data-data='{"image": "demo/faces/male/34.jpg"}'>Edward Larson</option>
-                          <option value="36" data-data='{"image": "demo/faces/female/11.jpg"}'>Joan Hanson</option>
-                          <option value="37" data-data='{"image": "demo/faces/female/30.jpg"}'>Janet Reed</option>
-                          <option value="38" data-data='{"image": "demo/faces/male/31.jpg"}'>Johnny Barnett</option>
-                          <option value="39" data-data='{"image": "demo/faces/male/42.jpg"}'>Ethan Griffin</option>
-                          <option value="40" data-data='{"image": "demo/faces/male/2.jpg"}'>Albert Torres</option>
-                          <option value="41" data-data='{"image": "demo/faces/female/25.jpg"}'>Jane Pearson</option>
-                          <option value="42" data-data='{"image": "demo/faces/male/9.jpg"}'>Jason Porter</option>
-                          <option value="43" data-data='{"image": "demo/faces/female/25.jpg"}'>Teresa Wood</option>
-                          <option value="44" data-data='{"image": "demo/faces/female/16.jpg"}'>Mary Butler</option>
-                          <option value="45" data-data='{"image": "demo/faces/female/27.jpg"}'>Janice Lane</option>
-                          <option value="46" data-data='{"image": "demo/faces/male/26.jpg"}'>Anthony Miller</option>
-                          <option value="47" data-data='{"image": "demo/faces/female/9.jpg"}'>Denise Elliott</option>
-                          <option value="48" data-data='{"image": "demo/faces/female/16.jpg"}'>Rose Cook</option>
-                          <option value="49" data-data='{"image": "demo/faces/male/17.jpg"}'>Terry Tucker</option>
-                          <option value="50" data-data='{"image": "demo/faces/female/6.jpg"}'>Grace Knight</option>
-                          <option value="51" data-data='{"image": "demo/faces/female/26.jpg"}'>Elizabeth Martin</option>
-                          <option value="52" data-data='{"image": "demo/faces/female/17.jpg"}'>Michelle Schultz</option>
-                          <option value="53" data-data='{"image": "demo/faces/female/21.jpg"}'>Crystal Austin</option>
-                          <option value="54" data-data='{"image": "demo/faces/male/32.jpg"}'>Douglas Ray</option>
-                          <option value="55" data-data='{"image": "demo/faces/female/12.jpg"}'>Teresa Reyes</option>
-                          <option value="56" data-data='{"image": "demo/faces/female/4.jpg"}'>Emma Wade</option>
-                          <option value="57" data-data='{"image": "demo/faces/female/27.jpg"}'>Carol Henderson</option>
-                          <option value="58" data-data='{"image": "demo/faces/male/20.jpg"}'>Christopher Harvey</option>
-                          <option value="59" data-data='{"image": "demo/faces/female/5.jpg"}'>Deborah Alvarado</option>
-                          <option value="60" data-data='{"image": "demo/faces/male/10.jpg"}'>Gregory Hunt</option>
-                          <option value="61" data-data='{"image": "demo/faces/male/14.jpg"}'>Jesse Carlson</option>
-                          <option value="62" data-data='{"image": "demo/faces/female/22.jpg"}'>Joan Wood</option>
-                          <option value="63" data-data='{"image": "demo/faces/male/20.jpg"}'>Carl Alvarado</option>
-                          <option value="64" data-data='{"image": "demo/faces/male/40.jpg"}'>Frank George</option>
-                          <option value="65" data-data='{"image": "demo/faces/female/17.jpg"}'>Kathleen Greene</option>
-                          <option value="66" data-data='{"image": "demo/faces/female/6.jpg"}'>Michelle Gray</option>
-                          <option value="67" data-data='{"image": "demo/faces/female/5.jpg"}'>Nancy Hawkins</option>
-                          <option value="68" data-data='{"image": "demo/faces/male/1.jpg"}'>Tyler Fisher</option>
-                          <option value="69" data-data='{"image": "demo/faces/male/5.jpg"}'>Jordan Cunningham</option>
-                          <option value="70" data-data='{"image": "demo/faces/male/27.jpg"}'>Wayne Reynolds</option>
-                          <option value="71" data-data='{"image": "demo/faces/male/10.jpg"}'>Johnny Carlson</option>
-                          <option value="72" data-data='{"image": "demo/faces/male/31.jpg"}'>Tyler Washington</option>
-                          <option value="73" data-data='{"image": "demo/faces/female/18.jpg"}'>Debra Alvarado</option>
-                          <option value="74" data-data='{"image": "demo/faces/female/21.jpg"}'>Beverly Brewer</option>
-                          <option value="75" data-data='{"image": "demo/faces/male/42.jpg"}'>Sean Gilbert</option>
-                          <option value="76" data-data='{"image": "demo/faces/female/32.jpg"}'>Diane McCoy</option>
-                          <option value="77" data-data='{"image": "demo/faces/male/35.jpg"}'>Robert Newman</option>
-                          <option value="78" data-data='{"image": "demo/faces/female/26.jpg"}'>Olivia Newman</option>
-                          <option value="79" data-data='{"image": "demo/faces/female/18.jpg"}'>Lori George</option>
-                          <option value="80" data-data='{"image": "demo/faces/female/13.jpg"}'>Madison Jimenez</option>
-                          <option value="81" data-data='{"image": "demo/faces/female/4.jpg"}'>Joan Rivera</option>
-                          <option value="82" data-data='{"image": "demo/faces/female/27.jpg"}'>Helen Aguilar</option>
-                          <option value="83" data-data='{"image": "demo/faces/male/40.jpg"}'>Bryan Johnson</option>
-                          <option value="84" data-data='{"image": "demo/faces/female/27.jpg"}'>Joan Beck</option>
-                          <option value="85" data-data='{"image": "demo/faces/male/33.jpg"}'>Douglas James</option>
-                          <option value="86" data-data='{"image": "demo/faces/male/24.jpg"}'>Ethan Bell</option>
-                          <option value="87" data-data='{"image": "demo/faces/female/18.jpg"}'>Frances White</option>
-                          <option value="88" data-data='{"image": "demo/faces/female/26.jpg"}'>Amanda Lawrence</option>
-                          <option value="89" data-data='{"image": "demo/faces/female/7.jpg"}'>Emma Bailey</option>
-                          <option value="90" data-data='{"image": "demo/faces/female/16.jpg"}'>Anna Jordan</option>
-                          <option value="91" data-data='{"image": "demo/faces/male/12.jpg"}'>Daniel Keller</option>
-                          <option value="92" data-data='{"image": "demo/faces/female/23.jpg"}'>Rachel Vargas</option>
-                          <option value="93" data-data='{"image": "demo/faces/female/15.jpg"}'>Virginia Kelly</option>
-                          <option value="94" data-data='{"image": "demo/faces/male/32.jpg"}'>Joe Sandoval</option>
-                          <option value="95" data-data='{"image": "demo/faces/female/9.jpg"}'>Megan Ray</option>
-                          <option value="96" data-data='{"image": "demo/faces/male/28.jpg"}'>Joshua Rios</option>
-                          <option value="97" data-data='{"image": "demo/faces/male/9.jpg"}'>Aaron Silva</option>
-                          <option value="98" data-data='{"image": "demo/faces/female/10.jpg"}'>Kathy Wallace</option>
-                          <option value="99" data-data='{"image": "demo/faces/male/14.jpg"}'>Zachary Griffin</option>
-                          <option value="100" data-data='{"image": "demo/faces/male/11.jpg"}'>Richard Allen</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">Countries</label>
-                        <select name="country" id="select-countries" class="form-control custom-select">
-                          <option value="br" data-data='{"image": "./assets/images/flags/br.svg"}'>Brazil</option>
-                          <option value="cz" data-data='{"image": "./assets/images/flags/cz.svg"}'>Czech Republic</option>
-                          <option value="de" data-data='{"image": "./assets/images/flags/de.svg"}'>Germany</option>
-                          <option value="pl" data-data='{"image": "./assets/images/flags/pl.svg"}' selected>Poland</option>
-                        </select>
-                      </div>
+                      
+                      
+                      
+                      
+                     
+                      
                     </div>
                   </div>
                 </div>
                 <div class="card-footer text-right">
                   <div class="d-flex">
-                    <a href="javascript:void(0)" class="btn btn-link">Cancel</a>
-                    <button type="submit" class="btn btn-primary ml-auto">Send data</button>
+                    <a href="#" class="btn btn-link">Hủy bỏ</a>
+                    <button  class="btn btn-primary ml-auto" disabled="true">Cài đặt</button>
                   </div>
                 </div>
               </form>
@@ -1159,328 +1053,8 @@
                 });
               </script>
             </div>
-            <div class="col-lg-4">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Input mask</h3>
-                </div>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label class="form-label">Date</label>
-                    <input type="text" name="field-name" class="form-control" data-mask="00/00/0000" data-mask-clearifnotmatch="true" placeholder="00/00/0000" />
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label">Hour</label>
-                    <input type="text" name="field-name" class="form-control" data-mask="00:00:00" data-mask-clearifnotmatch="true" placeholder="00:00:00" />
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label">Date & Hour</label>
-                    <input type="text" name="field-name" class="form-control" data-mask="00/00/0000 00:00:00" data-mask-clearifnotmatch="true" placeholder="00/00/0000 00:00:00" />
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label">ZIP Code</label>
-                    <input type="text" name="field-name" class="form-control" data-mask="00000-000" data-mask-clearifnotmatch="true" placeholder="00000-000" />
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label">Money</label>
-                    <input type="text" name="field-name" class="form-control" data-mask="000.000.000.000.000,00" data-mask-reverse="true" />
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label">Telephone</label>
-                    <input type="text" name="field-name" class="form-control" data-mask="0000-0000" data-mask-clearifnotmatch="true" placeholder="0000-0000" />
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label">Telephone with Code Area</label>
-                    <input type="text" name="field-name" class="form-control" data-mask="(00) 0000-0000" data-mask-clearifnotmatch="true" />
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label">IP Address</label>
-                    <input type="text" name="field-name" class="form-control" data-mask="099.099.099.099" data-mask-clearifnotmatch="true" placeholder="000.000.000.000" />
-                  </div>
-                </div>
-              </div>
-              <script>
-                require(['input-mask']);
-              </script>
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">My Profile</h3>
-                </div>
-                <div class="card-body">
-                  <form>
-                    <div class="row">
-                      <div class="col-auto">
-                        <span class="avatar avatar-xl" style="background-image: url(demo/faces/female/9.jpg)"></span>
-                      </div>
-                      <div class="col">
-                        <div class="form-group">
-                          <label class="form-label">Email-Address</label>
-                          <input class="form-control" placeholder="your-email@domain.com"/>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Bio</label>
-                      <textarea class="form-control" rows="5">Big belly rude boy, million dollar hustler. Unemployed.</textarea>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Email-Address</label>
-                      <input class="form-control" placeholder="your-email@domain.com"/>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Password</label>
-                      <input type="password" class="form-control" value="password"/>
-                    </div>
-                    <div class="form-footer">
-                      <button class="btn btn-primary btn-block">Save</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-8">
-              <form class="card">
-                <div class="card-body">
-                  <h3 class="card-title">Edit Profile</h3>
-                  <div class="row">
-                    <div class="col-md-5">
-                      <div class="form-group">
-                        <label class="form-label">Company</label>
-                        <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                      <div class="form-group">
-                        <label class="form-label">Username</label>
-                        <input type="text" class="form-control" placeholder="Username" value="michael23">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                      <div class="form-group">
-                        <label class="form-label">Email address</label>
-                        <input type="email" class="form-control" placeholder="Email">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6">
-                      <div class="form-group">
-                        <label class="form-label">First Name</label>
-                        <input type="text" class="form-control" placeholder="Company" value="Chet">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6">
-                      <div class="form-group">
-                        <label class="form-label">Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name" value="Faker">
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label class="form-label">Address</label>
-                        <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                      <div class="form-group">
-                        <label class="form-label">City</label>
-                        <input type="text" class="form-control" placeholder="City" value="Melbourne">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                      <div class="form-group">
-                        <label class="form-label">Postal Code</label>
-                        <input type="number" class="form-control" placeholder="ZIP Code">
-                      </div>
-                    </div>
-                    <div class="col-md-5">
-                      <div class="form-group">
-                        <label class="form-label">Country</label>
-                        <select class="form-control custom-select">
-                          <option value="">Germany</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group mb-0">
-                        <label class="form-label">About Me</label>
-                        <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">Oh so, your weak rhyme
-You doubt I'll bother, reading into it
-I'll probably won't, left to my own devices
-But that's the difference in our opinions.</textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer text-right">
-                  <button type="submit" class="btn btn-primary">Update Profile</button>
-                </div>
-              </form>
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">HTTP Request</h3>
-                </div>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="form-group col-sm-4 col-md-2">
-                      <label class="form-label">
-                        Method <span class="form-required">*</span>
-                      </label>
-                      <select class="custom-select">
-                        <option value="GET">GET</option>
-                        <option value="POST">POST</option>
-                        <option value="PUT">PUT</option>
-                        <option value="HEAD">HEAD</option>
-                        <option value="DELETE">DELETE</option>
-                        <option value="PATCH">PATCH</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-sm-8 col-md-10">
-                      <label class="form-label">
-                        URL <span class="form-required">*</span>
-                      </label>
-                      <input name="url" type="text" class="form-control" value="https://content.googleapis.com/discovery/v1/apis/surveys/v2/rest">
-                    </div>
-                  </div>
-                  <div class="form-label">Assertions</div>
-                  <div class="table-responsive">
-                    <table class="table mb-0">
-                      <thead>
-                        <tr>
-                          <th class="pl-0">Source</th>
-                          <th>Property</th>
-                          <th>Comparison</th>
-                          <th class="pr-0">Target</th>
-                        </tr>
-                      </thead>
-                      <tr>
-                        <td class="pl-0">
-                          <select class="custom-select">
-                            <option value="STATUS_CODE" selected>Status code</option>
-                            <option value="JSON_BODY">JSON body</option>
-                            <option value="HEADERS">Headers</option>
-                            <option value="TEXT_BODY">Text body</option>
-                            <option value="RESPONSE_TIME">Response time</option>
-                          </select>
-                        </td>
-                        <td>
-                          <input type="text" class="form-control"></td>
-                        <td>
-                          <select class="custom-select">
-                            <option value="EQUALS" selected>Equals</option>
-                            <option value="NOT_EQUALS">Not equals</option>
-                            <option value="HAS_KEY">Has key</option>
-                            <option value="NOT_HAS_KEY">Not has key</option>
-                            <option value="HAS_VALUE">Has value</option>
-                            <option value="NOT_HAS_VALUE">Not has value</option>
-                            <option value="IS_EMPTY">Is empty</option>
-                            <option value="NOT_EMPTY">Is not empty</option>
-                            <option value="GREATER_THAN">Greater than</option>
-                            <option value="LESS_THAN">Less than</option>
-                          </select>
-                        </td>
-                        <td class="pr-0">
-                          <input type="text" class="form-control" value="200">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="pl-0">
-                          <select class="custom-select">
-                            <option value="STATUS_CODE">Status code</option>
-                            <option value="JSON_BODY" selected>JSON body</option>
-                            <option value="HEADERS">Headers</option>
-                            <option value="TEXT_BODY">Text body</option>
-                            <option value="RESPONSE_TIME">Response time</option>
-                          </select>
-                        </td>
-                        <td>
-                          <input type="text" class="form-control" value="parameters.alt.type">
-                        </td>
-                        <td>
-                          <select class="custom-select">
-                            <option value="EQUALS">Equals</option>
-                            <option value="NOT_EQUALS">Not equals</option>
-                            <option value="HAS_KEY">Has key</option>
-                            <option value="NOT_HAS_KEY">Not has key</option>
-                            <option value="HAS_VALUE" selected>Has value</option>
-                            <option value="NOT_HAS_VALUE">Not has value</option>
-                            <option value="IS_EMPTY">Is empty</option>
-                            <option value="NOT_EMPTY">Is not empty</option>
-                            <option value="GREATER_THAN">Greater than</option>
-                            <option value="LESS_THAN">Less than</option>
-                          </select>
-                        </td>
-                        <td class="pr-0">
-                          <input type="text" class="form-control" value="string">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="pl-0">
-                          <select class="custom-select">
-                            <option value="STATUS_CODE">Status code</option>
-                            <option value="JSON_BODY">JSON body</option>
-                            <option value="HEADERS">Headers</option>
-                            <option value="TEXT_BODY">Text body</option>
-                            <option value="RESPONSE_TIME" selected>Response time</option>
-                          </select>
-                        </td>
-                        <td>
-                          <input type="text" class="form-control"></td>
-                        <td>
-                          <select class="custom-select">
-                            <option value="EQUALS">Equals</option>
-                            <option value="NOT_EQUALS">Not equals</option>
-                            <option value="HAS_KEY">Has key</option>
-                            <option value="NOT_HAS_KEY">Not has key</option>
-                            <option value="HAS_VALUE">Has value</option>
-                            <option value="NOT_HAS_VALUE">Not has value</option>
-                            <option value="IS_EMPTY">Is empty</option>
-                            <option value="NOT_EMPTY">Is not empty</option>
-                            <option value="GREATER_THAN">Greater than</option>
-                            <option value="LESS_THAN" selected>Less than</option>
-                          </select>
-                        </td>
-                        <td class="pr-0">
-                          <input type="text" class="form-control" value="500">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="pl-0">
-                          <select class="custom-select">
-                            <option value="STATUS_CODE">Status code</option>
-                            <option value="JSON_BODY">JSON body</option>
-                            <option value="HEADERS" selected>Headers</option>
-                            <option value="TEXT_BODY">Text body</option>
-                            <option value="RESPONSE_TIME">Response time</option>
-                          </select>
-                        </td>
-                        <td>
-                          <input type="text" class="form-control" value="content-type">
-                        </td>
-                        <td>
-                          <select class="custom-select">
-                            <option value="EQUALS" selected>Equals</option>
-                            <option value="NOT_EQUALS">Not equals</option>
-                            <option value="HAS_KEY">Has key</option>
-                            <option value="NOT_HAS_KEY">Not has key</option>
-                            <option value="HAS_VALUE">Has value</option>
-                            <option value="NOT_HAS_VALUE">Not has value</option>
-                            <option value="IS_EMPTY">Is empty</option>
-                            <option value="NOT_EMPTY">Is not empty</option>
-                            <option value="GREATER_THAN">Greater than</option>
-                            <option value="LESS_THAN">Less than</option>
-                          </select>
-                        </td>
-                        <td class="pr-0">
-                          <input type="text" class="form-control" value="application/json; charset=UTF-8">
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
-                <div class="card-footer text-right">
-                  <button type="submit" class="btn btn-primary">Make request</button>
-                </div>
-              </div>
-            </div>
+            
+            
           </div>
         </div>
       </div>
@@ -1544,4 +1118,25 @@ But that's the difference in our opinions.</textarea>
     </footer>
   </div>
 </body>
+<script type="text/javascript">
+                            {
+                              let app2 = new Vue({
+                                el: '#app2',
+                                data: {
+                                  xval: '0.8',
+                                  yval: '0.9'
+                                },
+                                methods: {
+                                  mychange: function (event) {
+                                    this.xval = event.target.value / 50;
+                                  },
+                                  mychange2: function (event) {
+                                    this.yval = event.target.value / 10;
+                                  }
+                                }
+
+                              })
+                            }
+                              
+    </script>
 </html>
